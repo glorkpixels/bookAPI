@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "2d8da1ff-c5fb-494e-bc93-ba95c0d48ff0",
+		"name": "BooksCruds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INSERT BOOK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Title\" : \"LOTR\",\r\n\"Author\": {\"Name\": \"J. R. R. Tolkien\" , \"Country\": \"United Kingdom\" , \"BirthDate\": \"18.18.1900\"},\r\n\"Price\": 500,\r\n\"ISBN\": \"ISBN-5050550\",\r\n\"Language\": \"English\",\r\n\"NumberOfPages\": 550,\r\n\"Publisher\": \"YKY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BOOKS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BOOKS by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\" : \"621f7b18b656a2f358923565\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE BOOK",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Title\" : \"LOTR\",\r\n\"Author\": {\"Name\": \"J. R. R. Tolkien\" , \"Country\": \"United Kingdom\" , \"BirthDate\": \"18.18.1810\"},\r\n\"Price\": \"500\",\r\n\"ISBN\": \"ISBN-5050550\",\r\n\"Language\": \"English\",\r\n\"NumberOfPages\": \"550\",\r\n\"Publisher\": \"YKY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/621f6176d7c20928020acdbe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"621f6176d7c20928020acdbe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BOOK",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/621f5fc46a24258e9cb1f723",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"621f5fc46a24258e9cb1f723"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
